@@ -1,0 +1,31 @@
+.cardList {
+    min-width: 320px;
+
+    input {
+        width: 50%;
+        margin: 10px 5px;
+        height: 40px;
+        border-radius: 4px;
+        border: 1px solid #6b6498;
+        padding: 0 10px;
+        outline: none;
+    }
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 35px;
+        margin-top: 50px;
+    }
+
+    select {
+        margin: 10px 5px;
+        height: 40px;
+        border-radius: 4px;
+        border: 1px solid #6b6498;
+        padding: 0 10px;
+        outline: none;
+    }
+}
