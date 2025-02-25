@@ -1,3 +1,4 @@
+import NoCard from "../../NoCard/NoCard";
 import Card from "../Card/Card"
 import styles from './CardList.module.scss'
 import { useState } from "react"
@@ -38,26 +39,33 @@ const CardList: React.FC<CardsListProps> = ({ cards }) => {
 
         <select
           name="category"
-          value={categories}
+          value={category}
           onChange={(e) => setCategory(e.target.value)}
         >
-            <option value="">All</option>
-            {categories.map((category) => (
-                <option key={category} value={category}>{category}</option>
-            ))}
+          <option value="all">All</option>
+          {categories.map((category) => (
+            <option key={category} value={category}>
+              {category}
+            </option>
+          ))}
         </select>
 
-        <ul>
-          {filteredCards.map((card) => (
-            <Card
-              key={card.id}
-              image={card.image}
-              title={card.title}
-              category={card.category}
-              price={card.price}
-            />
-          ))}
-        </ul>
+        {filteredCards.length < 1 ? (
+          <NoCard />
+        ) : (
+          <ul>
+            {filteredCards.map((card) => (
+              <Card
+                id={card.id}
+                key={card.id}
+                image={card.image}
+                title={card.title}
+                category={card.category}
+                price={card.price}
+              />
+            ))}
+          </ul>
+        )}
       </section>
     );
 }
