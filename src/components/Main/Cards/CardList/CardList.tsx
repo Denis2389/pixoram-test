@@ -56,7 +56,6 @@ const CardList: React.FC<CardsListProps> = ({ cards }) => {
           <ul>
             {filteredCards.map((card) => (
               <Card
-                id={card.id}
                 key={card.id}
                 image={card.image}
                 title={card.title}
