@@ -4,7 +4,7 @@ import { useCart } from '../../context/CartContext';
 
 const Header = () => {
 
-  const { isCartOpen, setIsCartOpen, cart } = useCart();
+  const { isCartOpen, setIsCartOpen} = useCart();
 
     return (
       <header className={styles.header}>
